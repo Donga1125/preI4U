@@ -252,9 +252,9 @@ if st.button("질문하기"):
         st.markdown(f'<div class="service-msg">{response_content}</div>', unsafe_allow_html=True)
 
         # OpenAI의 응답을 대화 기록에 추가
+        message_history.append({"role": "assistant", "content": response_content})
 
-        message_history.append({"role": "service", "content": response_content})
-
+        # 응답 내용을 로그로 출력 (선택 사항)
         print(response_content)
 
         # 새로고침하여 대화 기록을 업데이트
